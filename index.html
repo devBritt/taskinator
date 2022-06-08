@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taskinator</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+    <!-- header with list controls -->
+    <header>
+        <h1 class="page-title">Taskinator</h1>
+        <p>Click the button below to add a new task!</p>
+        <form id="task-form">
+            <!-- task name field -->
+            <div class="form-group">
+                <input type="text" name="task-name" placeholder="Enter Task Name" />
+            </div>
+            <!-- select new task type -->
+            <div class="form-group">
+                <select name="task-type" class="select-dropdown">
+                    <option value="" disabled selected>Pick a task type</option>
+                    <option value="Personal">Personal</option>
+                    <option value="School">School</option>
+                    <option value="Work">Work</option>
+                </select>
+            </div>
+            <!-- add task button -->
+            <div class="form-group">
+                <button id="save-task" class="btn">Add Task</button>
+            </div>
+        </form>
+    </header>
+
+    <!-- main section with list containers and task tiles -->
+    <main id="page-content" class="page-content">
+        <!-- Tasks to do -->
+        <section class="task-list-wrapper">
+            <h2 class="list-title">Tasks To Do</h2>
+            <ul id="tasks-to-do" class="task-list">
+                <!-- dynamically created <li>s will be here -->
+            </ul>
+        </section>
+        <!-- Tasks in progress -->
+        <section class="task-list-wrapper">
+            <h2 class="list-title">Tasks In Progress</h2>
+            <ul id="tasks-in-progress" class="task-list">
+                <!-- dynamically created <li>s will be here -->
+            </ul>
+        </section>
+        <!-- Tasks completed -->
+        <section class="task-list-wrapper">
+            <h2 class="list-title">Tasks Completed</h2>
+            <ul id="tasks-completed" class="task-list">
+                <!-- dynamically created <li>s will be here -->
+            </ul>
+        </section>
+    </main>
+
+    <!-- footer with copyright info -->
+    <footer>
+        &copy;2020 by Taskinator
+    </footer>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
