@@ -69,6 +69,7 @@ var taskStatusChangeHandler = function(event) {
             tasks[i].status = statusValue;
         }
     }
+    saveTasks();
 };
 
 // function to create the HTML for a new task
@@ -98,6 +99,7 @@ var createTaskEl = function(taskDataObj) {
     taskDataObj.id = taskIdCounter;
     // add task object to task objects array
     tasks.push(taskDataObj);
+    saveTasks();
 
     // increment task counter for next unique id
     taskIdCounter++;
@@ -203,6 +205,7 @@ var completeEditTask = function(taskName, taskType, taskId) {
             tasks[i].type = taskType;
         }
     }
+    saveTasks();
 
     // reset form
     formEl.removeAttribute("data-task-id");
@@ -226,7 +229,14 @@ var deleteTask = function(taskId) {
 
     // reassign tasks array to be the same as updatedTaskArr
     tasks = updatedTaskArr;
+    saveTasks();
+
 };
+
+// function to save tasks to local storage
+var saveTasks = function() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
 
 // listen for "Add Task" button click
 formEl.addEventListener("submit", taskFormHandler);
